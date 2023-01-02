@@ -5,7 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
-import SignUp from "./Pages/SignUp";
+import SignIn from "./Pages/SignIn";
+import { SignUp } from "./Pages/SignUp";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,7 +15,8 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/sign-in" element={<SignUp />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
         <Route path="/" element={<App />} />
       </Routes>
     </BrowserRouter>

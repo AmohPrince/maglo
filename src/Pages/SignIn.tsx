@@ -2,15 +2,15 @@ import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { assets } from "../Assets/Assets";
 
-export const SignUp = () => {
-  const fullNameRef = useRef<HTMLInputElement>(null);
+const SignIn = () => {
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+  const thirtyDaysCheckboxRef = useRef<HTMLInputElement>(null);
 
-  const handleSignIn = () => {
-    console.log(fullNameRef.current?.value);
+  const handleLogin = () => {
     console.log(emailRef.current?.value);
     console.log(passwordRef.current?.value);
+    console.log(thirtyDaysCheckboxRef.current?.checked);
   };
 
   return (
@@ -34,26 +34,17 @@ export const SignUp = () => {
           </svg>
           <p className="font-bold text-lg dark:text-white ml-2">Maglo</p>
         </div>
-        <p className="font-semibold text-3xl mt-[9%] dark:text-white">
-          Create new account
+        <p className="font-semibold text-3xl mt-[14%] dark:text-white">
+          Welcome back
         </p>
         <p className="font-normal text-base text-gray-400">
           Welcome back please enter your details
         </p>
-        <p className="text-sm font-medium mt-6 mb-2 dark:text-white">
-          Full name
-        </p>
-        <input
-          type="text"
-          placeholder="Enter your full names"
-          className="py-2 px-4 text-sm border w-full rounded-sm dark:bg-transparent dark:text-white focus:outline-none"
-          ref={fullNameRef}
-        />
         <p className="text-sm font-medium mt-6 mb-2 dark:text-white">Email</p>
         <input
           type="email"
           placeholder="Enter your email"
-          className="py-2 px-4 text-sm border w-full rounded-sm dark:bg-transparent dark:text-white focus:outline-none"
+          className="py-3 px-4 text-sm border w-full rounded-sm dark:bg-transparent dark:text-white focus:outline-none"
           ref={emailRef}
         />
         <p className="text-sm font-medium mt-4 mb-2 dark:text-white">
@@ -61,27 +52,40 @@ export const SignUp = () => {
         </p>
         <input
           type="password"
-          className="py-2 px-4 border w-full rounded-sm dark:bg-transparent dark:text-white focus:outline-none"
+          className="py-3 px-4 border w-full rounded-sm dark:bg-transparent dark:text-white focus:outline-none"
           placeholder="Password"
           ref={passwordRef}
         />
+        <div className="flex items-center mt-5 mb-6">
+          <input
+            type="checkbox"
+            className="w-4 h-4 mr-2 dark:bg-transparent"
+            ref={thirtyDaysCheckboxRef}
+          />
+          <p className="text-sm font-medium dark:text-white">
+            Remember for 30 days
+          </p>
+          <p className="font-medium text-sm ml-auto dark:text-white">
+            Forgot password
+          </p>
+        </div>
         <button
-          className="text-sm font-semibold bg-magloGreen w-full px-5 py-3 rounded-lg mt-6"
-          onClick={handleSignIn}
+          className="text-sm font-semibold bg-magloGreen w-full px-5 py-3 rounded-lg"
+          onClick={handleLogin}
         >
-          Create account
+          Sign in
         </button>
         <div className="flex justify-center mt-4 mb-6 cursor-pointer items-center">
           <img src={assets.google} alt="google icon" className="w-5 h-5" />
-          <p className="font-medium ml-2 text-gray-600">Sign up with google</p>
+          <p className="font-medium ml-2 text-gray-600">Sign in with google</p>
         </div>
         <p className="text-sm text-gray-400 text-center">
-          Already have an account?{" "}
+          Don’t have an account?{" "}
           <Link
             className="text-black cursor-pointer dark:text-white"
-            to="/sign-in"
+            to="/sign-up"
           >
-            Sign in
+            Sign up its free!
           </Link>
         </p>
       </div>
@@ -95,3 +99,5 @@ export const SignUp = () => {
     </div>
   );
 };
+
+export default SignIn;
