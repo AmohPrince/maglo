@@ -7,8 +7,8 @@ import MenuItem from "./Components/MenuItem";
 
 function App() {
   return (
-    <div className="App flex h-screen">
-      <div className="bg-gray-100 pt-8 px-6 relative">
+    <div className="App flex h-screen dark:bg-magloBlack">
+      <div className="bg-gray-100 pt-8 px-6 relative dark:bg-magloSemiBlack">
         <Logo />
         <div className="mt-[15%]">
           <MenuItem name="Dashboard" />
