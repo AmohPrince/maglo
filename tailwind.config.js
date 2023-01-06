@@ -8,6 +8,7 @@ module.exports = {
         magloBlack: "#1c1a2e",
         magloSemiBlack: "#1e1c30",
         magloDashBoardTabsBlack: "#363a3f",
+        magloGrey: "#626260",
       },
     },
   },

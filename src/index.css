@@ -66,3 +66,18 @@ code {
 .dark-fill {
   fill: white;
 }
+
+.credit-card {
+  background: linear-gradient(104.3deg, #4a4a49 2.66%, #20201f 90.57%);
+  border-radius: 15px;
+}
+
+.white-credit-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+}
