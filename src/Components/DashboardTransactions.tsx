@@ -27,7 +27,7 @@ const DashboardTransactions = () => {
             <img
               src={transaction.img}
               alt="company logo"
-              className="h-9 w-9 mr-3 object-cover"
+              className="h-9 w-9 mr-3 object-cover rounded"
             />
             <div className="text-left">
               <p className="font-semibold">{transaction.name}</p>
