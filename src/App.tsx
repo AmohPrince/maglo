@@ -4,9 +4,10 @@ import "./App.css";
 import { assets } from "./Assets/Assets";
 import Logo from "./Components/Logo";
 import MenuItem from "./Components/MenuItem";
-import { GlobalContextType, Transaction } from "./Types/GlobalTypes";
+import { GlobalContextType, Invoice, Transaction } from "./Types/GlobalTypes";
 import devTransactions from "./Util/transactions.json";
 import devTransfers from "./Util/scheduledtransfers.json";
+import devInvoices from "./Util/invoices.json";
 import { getCapitalized } from "./Util/UtilityFunctions";
 
 export const GlobalContext = createContext<GlobalContextType>(null as any);
@@ -14,8 +15,9 @@ export const GlobalContext = createContext<GlobalContextType>(null as any);
 function App() {
   const [transactions, setTransactions] =
     useState<Transaction[]>(devTransactions);
-
   const [scheduledTransfers, setScheduledTransfers] = useState(devTransfers);
+  const [invoices, setInvoices] = useState<Invoice[]>(devInvoices);
+
   const { pathname } = useLocation();
 
   return (
@@ -23,6 +25,7 @@ function App() {
       value={{
         transactions,
         scheduledTransfers,
+        invoices,
       }}
     >
       <div className="App flex h-screen dark:bg-magloBlack">

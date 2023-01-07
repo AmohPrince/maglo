@@ -17,7 +17,20 @@ export type ScheduledTransfers = {
   amount: number;
 };
 
+export type Invoice = {
+  img: string;
+  name: string;
+  invoiceId: string;
+  date: string;
+  time: string;
+  noOfItems?: number;
+  type?: string;
+  amount: number;
+  status: string;
+};
+
 export type GlobalContextType = {
   transactions: Transaction[];
   scheduledTransfers: ScheduledTransfers[];
+  invoices: Invoice[];
 };

@@ -1,20 +1,33 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { GlobalContext } from "../App";
-import { assets } from "../Assets/Assets";
+import Search from "../Components/Search";
+import { Transaction } from "../Types/GlobalTypes";
 
 const Transactions = () => {
   const { transactions } = useContext(GlobalContext);
+  const [localTransactionsList, setLocalTransactionsList] =
+    useState<Transaction[]>(transactions);
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const searchValue = e.target.value.toLowerCase();
+    setLocalTransactionsList(
+      transactions.filter(
+        (transaction) =>
+          transaction.company.toLowerCase().includes(searchValue) ||
+          transaction.name.toLowerCase().includes(searchValue) ||
+          transaction.type.toLowerCase().includes(searchValue) ||
+          transaction.invoiceId.toLowerCase().includes(searchValue)
+      )
+    );
+  };
+
   return (
     <div>
-      <div className="w-1/3 mt-3 mb-7 bg-gray-50 dark:bg-magloDarkBlue py-2 px-3 rounded-lg flex cursor-pointer">
-        <img src={assets.searchIcon} alt="search" className="mr-4" />
-        <input
-          type="text"
-          className="w-full bg-transparent focus:outline-none"
-          placeholder="Search anything on Transactions"
-        />
-      </div>
-      <div className="h-[1px] bg-gray-100" />
+      <Search
+        handleSearch={handleSearch}
+        placeholder="Search anything on Transactions"
+      />
+      <div className="h-[1px] bg-gray-100 mt-7" />
       <div className="flex my-5 uppercase text-xs font-normal text-gray-400 text-left justify-between">
         <p className="w-[20%]">Name/Business</p>
         <p className="w-[15%]">Type</p>
@@ -23,8 +36,11 @@ const Transactions = () => {
         <p className="w-[15%]">Invoice Id</p>
         <p className="w-[15%]">Action</p>
       </div>
-      {transactions.map((transaction) => (
-        <div className="flex pb-5 mb-2 border-b border-gray-100 dark:border-gray-50 text-left justify-between dark:text-white">
+      {localTransactionsList.map((transaction, index) => (
+        <div
+          className="flex pb-5 mb-2 border-b border-gray-100 dark:border-gray-50 text-left justify-between dark:text-white"
+          key={index}
+        >
           <div className="flex justify-start w-[20%] ">
             <img
               src={transaction.img}

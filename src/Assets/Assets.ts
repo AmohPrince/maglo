@@ -11,8 +11,12 @@ import creditCardSimThing from "./CreditCardSim.svg";
 import creditCardNetworkThing from "./CreditCardNetwork.svg";
 import masterCardLogo from "./MasterCardLogo.svg";
 import visaLogo from "./Visa.svg";
+import CreateInvoice from "./CreateInvoice.svg";
+import Filters from "./Filters.svg";
 
 export const assets = {
+  Filters,
+  CreateInvoice,
   visaLogo,
   masterCardLogo,
   creditCardNetworkThing,
