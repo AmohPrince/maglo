@@ -16,6 +16,8 @@ module.exports = {
         magloTextGreen: "#27AE60",
         magloLightRed: "#FFEFEF",
         magloRed: "#EB5757",
+        magloSemiDark: "#1b212d",
+        magloLightGrey: "#f8f8f8",
       },
     },
   },

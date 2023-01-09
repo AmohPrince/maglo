@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { GlobalContext } from "../App";
 import { assets } from "../Assets/Assets";
 import Search from "../Components/Search";
@@ -26,10 +27,13 @@ const Invoices = () => {
       <div className="flex items-center justify-between">
         <Search handleSearch={handleSearch} placeholder="Search invoices" />
         <div className="flex">
-          <button className="flex bg-magloGreen py-3 px-5 rounded-md items-center font-semibold text-sm mr-7">
+          <Link
+            className="flex bg-magloGreen py-3 px-5 rounded-md items-center font-semibold text-sm mr-7"
+            to="new-invoice"
+          >
             <img src={assets.CreateInvoice} alt="invoice" className="mr-2" />
             Create invoice
-          </button>
+          </Link>
           <button className="flex py-3 px-5 rounded-md items-center font-semibold text-sm border">
             <img src={assets.Filters} alt="invoice" className="mr-2" />
             Filters

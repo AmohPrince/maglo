@@ -49,7 +49,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="show py-8 px-10 flex-grow">
+        <div className="py-5 px-10 flex-grow">
           <div className="flex justify-between items-center w-full">
             <p className="font-bold text-2xl dark:text-white">
               {getCurrentPage(pathname)}

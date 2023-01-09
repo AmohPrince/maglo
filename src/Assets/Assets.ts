@@ -13,8 +13,14 @@ import masterCardLogo from "./MasterCardLogo.svg";
 import visaLogo from "./Visa.svg";
 import CreateInvoice from "./CreateInvoice.svg";
 import Filters from "./Filters.svg";
+import Rahman from "./Rahman.png";
+import Download from "./Downloads.svg";
+import Preview from "./Preview.svg";
 
 export const assets = {
+  Download,
+  Preview,
+  Rahman,
   Filters,
   CreateInvoice,
   visaLogo,

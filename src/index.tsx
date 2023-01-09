@@ -11,6 +11,7 @@ import Settings from "./Pages/Settings";
 import MyWallets from "./Pages/MyWallets";
 import Invoices from "./Pages/Invoices";
 import Transactions from "./Pages/Transactions";
+import NewInvoice from "./Pages/NewInvoice";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -25,6 +26,7 @@ root.render(
           <Route path="dashboard" element={<DashBoard />} />
           <Route path="transactions" element={<Transactions />} />
           <Route path="invoices" element={<Invoices />} />
+          <Route path="invoices/new-invoice" element={<NewInvoice />} />
           <Route path="mywallets" element={<MyWallets />} />
           <Route path="settings" element={<Settings />} />
         </Route>
