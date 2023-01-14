@@ -16,8 +16,14 @@ import Filters from "./Filters.svg";
 import Rahman from "./Rahman.png";
 import Download from "./Downloads.svg";
 import Preview from "./Preview.svg";
+import Edit from "./Edit.svg";
+import Sun from "./icons8-sun.svg";
+import CrescentMoon from "./crescent.svg";
 
 export const assets = {
+  CrescentMoon,
+  Sun,
+  Edit,
   Download,
   Preview,
   Rahman,

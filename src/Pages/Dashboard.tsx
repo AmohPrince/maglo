@@ -1,5 +1,4 @@
 import React from "react";
-import { assets } from "../Assets/Assets";
 import BalanceIcon from "../Components/BalanceIcon";
 import CreditCards from "../Components/CreditCards";
 import DashboardGraph from "../Components/DashboardGraph";

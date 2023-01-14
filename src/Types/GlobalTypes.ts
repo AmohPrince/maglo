@@ -33,4 +33,6 @@ export type GlobalContextType = {
   transactions: Transaction[];
   scheduledTransfers: ScheduledTransfers[];
   invoices: Invoice[];
+  isDarkMode: boolean;
+  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 };

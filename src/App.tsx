@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router";
 import "./App.css";
 import { assets } from "./Assets/Assets";
@@ -17,8 +17,18 @@ function App() {
     useState<Transaction[]>(devTransactions);
   const [scheduledTransfers, setScheduledTransfers] = useState(devTransfers);
   const [invoices, setInvoices] = useState<Invoice[]>(devInvoices);
-
+  const [isDarkMode, setIsDarkMode] = useState(
+    document.getElementsByTagName("html")[0].classList.contains("html")
+  );
   const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.getElementsByTagName("html")[0].classList.add("dark");
+    } else {
+      document.getElementsByTagName("html")[0].classList.remove("dark");
+    }
+  }, [isDarkMode]);
 
   return (
     <GlobalContext.Provider
@@ -26,6 +36,8 @@ function App() {
         transactions,
         scheduledTransfers,
         invoices,
+        isDarkMode,
+        setIsDarkMode,
       }}
     >
       <div className="App flex h-screen dark:bg-magloBlack">
@@ -61,7 +73,7 @@ function App() {
                 className={`w-4 h-4 mr-11`}
               />
               <img src={assets.bell} alt="bell" className={`w-4 h-4 mr-11`} />
-              <div className="flex items-center bg-gray-50 rounded-full py-1 px-2 cursor-pointer">
+              <div className="flex items-center bg-gray-50 dark:bg-magloSemiBlack dark:text-white rounded-full py-1 px-2 cursor-pointer">
                 <img
                   src={assets.profile}
                   alt="profile"
