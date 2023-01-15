@@ -26,7 +26,7 @@ const MyWallets = () => {
     <div className="flex">
       <div className="w-[36%]">
         <CreditCards />
-        <div className="mt-7 p-6 text-left bg-gray-100 rounded-lg">
+        <div className="mt-7 p-6 text-left bg-gray-100 rounded-lg dark:bg-magloSemiBlack dark:text-white">
           <p className="text-gray-400 text-sm font-medium">Your balance</p>
           <div className="flex justify-between items-center">
             <p className="font-semibold text-lg">${5240.0}</p>
@@ -87,13 +87,15 @@ const MyWallets = () => {
           </div>
         </div>
       </div>
-      <div className="ml-10 text-left flex-grow mt-6">
+      <div className="ml-10 text-left flex-grow mt-6 dark:text-white">
         <p className="font-semibold text-xl">My Payments</p>
         <div className="font-medium text-sm flex justify-between text-gray-400 mt-6">
           <div>
             <button
               className={`mr-5 ${
-                showAll ? "text-black border-b-2 border-green-600" : ""
+                showAll
+                  ? "text-black border-b-2 border-green-600 dark:text-white"
+                  : ""
               } pb-3`}
               onClick={() => setShowAll(true)}
             >
@@ -101,7 +103,9 @@ const MyWallets = () => {
             </button>
             <button
               className={`pb-3 ${
-                showAll ? "" : "text-black border-b-2 border-green-600"
+                showAll
+                  ? ""
+                  : "text-black border-b-2 border-green-600 dark:text-white"
               }`}
               onClick={() => setShowAll(false)}
             >
@@ -117,7 +121,7 @@ const MyWallets = () => {
             <input
               type="search"
               placeholder="Search"
-              className="focus:outline-none w-16 focus:w-28 transition-all"
+              className="focus:outline-none w-16 focus:w-28 transition-all bg-transparent"
               onChange={(e) => handleSearch(e)}
             />
           </div>

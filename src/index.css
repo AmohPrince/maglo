@@ -70,6 +70,8 @@ code {
 .credit-card {
   background: linear-gradient(104.3deg, #4a4a49 2.66%, #20201f 90.57%);
   border-radius: 15px;
+  /* @apply: dark background:
+    linear-gradient(110.77deg, #2e2b4a 2.85%, #29263f 128.48%); */
 }
 
 .white-credit-card {

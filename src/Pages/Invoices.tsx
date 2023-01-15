@@ -34,7 +34,7 @@ const Invoices = () => {
             <img src={assets.CreateInvoice} alt="invoice" className="mr-2" />
             Create invoice
           </Link>
-          <button className="flex py-3 px-5 rounded-md items-center font-semibold text-sm border">
+          <button className="flex py-3 px-5 rounded-md items-center font-semibold text-sm border dark:text-white">
             <img src={assets.Filters} alt="invoice" className="mr-2" />
             Filters
           </button>
@@ -57,12 +57,12 @@ const Invoices = () => {
               className="w-9 h-9 rounded-full mr-4"
             />
             <div className="text-left">
-              <p className="text-sm">{invoice.name}</p>
+              <p className="text-sm dark:text-white">{invoice.name}</p>
               <p className="text-gray-400 text-xs">Inv. {invoice.invoiceId}</p>
             </div>
           </div>
           <div className="text-left w-[15%]">
-            <p className="text-sm">{invoice.date}</p>
+            <p className="text-sm dark:text-white">{invoice.date}</p>
             <p className="text-gray-400 text-xs">at {invoice.time}</p>
           </div>
           <p className="text-gray-400 font-medium w-[10%]">
@@ -70,7 +70,9 @@ const Invoices = () => {
               ? getCapitalized(invoice.type!)
               : invoice.noOfItems}
           </p>
-          <p className="font-semibold w-[15%]">${invoice.amount}</p>
+          <p className="font-semibold w-[15%] dark:text-white">
+            ${invoice.amount}
+          </p>
           <Status status={invoice.status} />
           <p className="cursor-pointer w-[10%]">...</p>
         </div>
