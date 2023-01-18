@@ -12,14 +12,15 @@ const MenuItem = ({ name }: { name: string }) => {
   const { pathname } = useLocation();
   const to = convertNameToUrlString(name);
   const baseUrl = getBaseUrl(pathname);
-  const isActive = baseUrl === "/" + to;
+  const isActive = isTabActive(baseUrl, to, name);
+  console.log(baseUrl);
 
   return (
     <Link
       className={`${
         isActive ? "bg-magloGreen" : ""
       } cursor-pointer rounded-lg flex py-3 pl-4 pr-20 transition-all items-center h-12`}
-      to={to}
+      to={name === "Dashboard" ? "/" : to}
     >
       {getIcon(name, isActive)}
       <p
@@ -69,4 +70,14 @@ const getIcon = (name: string, isActive: boolean): React.ReactNode => {
     default:
       return null;
   }
+};
+
+const isTabActive = (baseUrl: string, to: string, name: string): boolean => {
+  if (baseUrl === "/" && name === "Dashboard") {
+    return true;
+  }
+
+  console.log(baseUrl);
+
+  return baseUrl === "/" + to;
 };

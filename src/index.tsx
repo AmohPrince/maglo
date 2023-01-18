@@ -16,6 +16,7 @@ import NewInvoice from "./Pages/NewInvoice";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -23,7 +24,7 @@ root.render(
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/" element={<App />}>
-          <Route path="dashboard" element={<DashBoard />} />
+          <Route element={<DashBoard />} index/>
           <Route path="transactions" element={<Transactions />} />
           <Route path="invoices" element={<Invoices />} />
           <Route path="invoices/new-invoice" element={<NewInvoice />} />
